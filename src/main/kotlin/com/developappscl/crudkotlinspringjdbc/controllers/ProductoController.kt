@@ -3,6 +3,7 @@ package com.developappscl.crudkotlinspringjdbc.controllers
 import com.developappscl.crudkotlinspringjdbc.config.Constantes
 import com.developappscl.crudkotlinspringjdbc.dto.ProductoDto
 import com.developappscl.crudkotlinspringjdbc.service.ProductoService
+import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
 
@@ -15,10 +16,8 @@ class ProductoController(
     @GetMapping("/getAllProducts")
     fun getAllProducts(): List<ProductoDto> = productoService.getAllProducts()
 
-    @GetMapping("/getProductById")
-    fun getProductById(): String{
-        return "getProductById"
-    }
+    @GetMapping("/getProductById/{id}")
+    fun getProductById(@PathVariable id: Int): ResponseEntity<ProductoDto> = productoService.getProductById(id)
 
     @PostMapping("/createProduct")
     fun createProduct():String {
