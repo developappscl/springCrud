@@ -1,7 +1,6 @@
-package com.developappscl.crudkotlinspringjdbc.model
+package com.developappscl.crudkotlinspringjdbc.dto
 
-
-data class Producto (
+data class ProductoDto (
     val id: Long,
     val name: String,
     val description: String,
